@@ -1,0 +1,7 @@
+services:
+  mycsvserver:
+    image:  infracloudio/csvserver:latest
+    ports:
+        - 9393:9300
+    volumes:
+    - ./inputfile:/csvserver/inputdata

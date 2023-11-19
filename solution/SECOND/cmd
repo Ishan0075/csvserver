@@ -1,0 +1,32 @@
+0.
+:/test/csvserver$ docker ps
+CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS          PORTS                    NAMES
+81ad759afc5c   infracloudio/csvserver:latest   "/csvserver/csvserver"   29 minutes ago   Up 29 minutes   0.0.0.0:9393->9300/tcp   pedantic_antonelli
+/test/csvserver$ docker stop 81ad759afc5c
+81ad759afc5c
+/test/csvserver$ docker rm 81ad759afc5c
+81ad759afc5c
+
+2. creating docker compose-file
+services:
+  mycsvserver:
+    image:  infracloudio/csvserver:latest
+    ports:
+        - 9393:9300
+    volumes:
+    - ./inputfile:/csvserver/inputdata
+
+
+
+3. create env file 
+csvserver.env
+
+
+4 docker compose-up
+sudo docker-compose --env-file ./csvserver.env up --remove-orphans
+
+docker ps
+CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS                    NAMES
+4d79b605694d   infracloudio/csvserver:latest   "/csvserver/csvserver"   About a minute ago   Up About a minute   0.0.0.0:9393->9300/tcp   csvserver-mycsvserver-1
+	  
+	  <<<<<<<<  Application was accessible >>>>>>>>>
