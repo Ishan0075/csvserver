@@ -1,0 +1,7 @@
+services:
+  mycsvserver:
+    image:  prom/prometheus:v2.22.0
+    ports:
+        - "9090"
+    volumes:
+    - ./inputfile:/csvserver/inputdata

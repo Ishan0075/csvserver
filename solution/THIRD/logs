@@ -1,0 +1,25 @@
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.041Z caller=main.go:315 msg="No time or size retention was set so using the default time retention" duration=15d
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.041Z caller=main.go:353 msg="Starting Prometheus" version="(version=2.22.0, branch=HEAD, revision=0a7fdd3b76960808c3a91d92267c3d815c1bc354)"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.041Z caller=main.go:358 build_context="(go=go1.15.3, user=root@6321101b2c50, date=20201015-12:29:59)"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.042Z caller=main.go:359 host_details="(Linux 5.10.102.1-microsoft-standard-WSL2 #1 SMP Wed Mar 2 00:30:59 UTC 2022 x86_64 73ea3a04ed23 corp.amdocs.com)"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.042Z caller=main.go:360 fd_limits="(soft=1048576, hard=1048576)"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.042Z caller=main.go:361 vm_limits="(soft=unlimited, hard=unlimited)"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.045Z caller=main.go:712 msg="Starting TSDB ..."
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.045Z caller=web.go:516 component=web msg="Start listening for connections" address=0.0.0.0:9090
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.048Z caller=head.go:642 component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.048Z caller=head.go:656 component=tsdb msg="On-disk memory mappable chunks replay completed" duration=6µs
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.048Z caller=head.go:662 component=tsdb msg="Replaying WAL, this may take a while"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.053Z caller=head.go:714 component=tsdb msg="WAL segment loaded" segment=0 maxSegment=2
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.055Z caller=head.go:714 component=tsdb msg="WAL segment loaded" segment=1 maxSegment=2
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.055Z caller=head.go:714 component=tsdb msg="WAL segment loaded" segment=2 maxSegment=2
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.055Z caller=head.go:719 component=tsdb msg="WAL replay completed" checkpoint_replay_duration=57µs wal_replay_duration=7.087ms total_replay_duration=7.1682ms
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.057Z caller=main.go:732 fs_type=EXT4_SUPER_MAGIC
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.057Z caller=main.go:735 msg="TSDB started"
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.057Z caller=main.go:861 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.057Z caller=main.go:892 msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=665.8µs remote_storage=2.4µs web_handler=500ns query_engine=900ns scrape=304.4µs scrape_sd=31.4µs notify=26.9µs notify_sd=16.8µs rules=1.6µs
+csvserver-mycsvserver-1  | level=info ts=2023-11-19T06:34:53.058Z caller=main.go:684 msg="Server is ready to receive web requests."
+
+
+docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS              PORTS                    NAMES
+73ea3a04ed23   prom/prometheus:v2.22.0   "/bin/prometheus --c…"   5 minutes ago   Up About a minute   0.0.0.0:1785->9090/tcp   csvserver-mycsvserver-1
