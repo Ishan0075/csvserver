@@ -41,11 +41,13 @@ docker rm 624b259bb9e2
 a. docker run -d -v /test/csvserver/inputfile:/csvserver/inputdata infracloudio/csvserver:latest -p 9393:9300
 application is accessbible locally at 9393 port after port forwarding: http://localhost:9393/
 
+<<<<   Application is accessible >>>>
+
 b. seting env variable in the container.
 docker run -d -p 9393:9300 -v /test/csvserver/inputfile:/csvserver/inputdata -e "CSVSERVER_BORDER=orange" infracloudio/csvserver:latest
 ishan@DVCINH6110257:/test/csvserver$ docker ps
 CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS          PORTS                    NAMES
 81ad759afc5c   infracloudio/csvserver:latest   "/csvserver/csvserver"   29 minutes ago   Up 29 minutes   0.0.0.0:9393->9300/tcp   pedantic_antonelli
-<<<<   Application as an orange >>>>
+<<<<  Application is accessible with orange layout as set in env variable >>>>
 
 
