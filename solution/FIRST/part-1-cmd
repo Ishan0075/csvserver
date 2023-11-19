@@ -1,7 +1,7 @@
 1. docker run infracloudio/csvserver:latest
 ERROR: error while reading the file ".csvserver/inputdata": open .csvserver/inputdata: no such file or directory
 
-2. Reason we ahevto mounth this file in the form of volume which is performed in the next stage.
+2. Reason we have to mount this file in the form of volume which is performed in the next stage.
 
 3. small bash script which will populate all the 
 script: gencsv.sh
